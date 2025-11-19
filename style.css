@@ -42,17 +42,46 @@ body {
 }
 
 .reviews-grid {
-  column-count: 5; /* số cột tùy ý */
-  column-gap: 25px;
+  width: 100%;
 }
 
 .review-card {
-  break-inside: avoid; /* tránh bị chia cắt */
+  width: 17.5%;
   margin-bottom: 25px;
+  float: left;
+  margin-right: 1.25%;
   background: #fff;
   border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* thêm dòng này */
+}
+
+/* Hàng cuối cùng không bị tràn */
+.review-card:nth-child(5n) {
+  margin-right: 0;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .review-card {
+    width: 24%;
+  }
+}
+@media (max-width: 1200px) {
+  .review-card {
+    width: 32%;
+  }
+}
+@media (max-width: 992px) {
+  .review-card {
+    width: 48%;
+  }
+}
+@media (max-width: 576px) {
+  .review-card {
+    width: 100%;
+  }
 }
 
 .review-img {
